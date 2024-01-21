@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Example</title>
+</head>
+<body>
+
+<div id="root"></div>
+
+<!-- Include React and ReactDOM -->
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  // Your React component using controlled input
+  const { useState } = React;
+
+  const App = () => {
+    const [inputValue, setInputValue] = useState('');
+
+    const handleInputChange = (event) => {
+      setInputValue(event.target.value);
+    };
+
+    return (
+      <div>
+        {/* Input field */}
+        <input
+          type="text"
+          id="textToShow"
+          value={inputValue}
+          onChange={handleInputChange}
+        />
+
+        {/* Display the input value in a div */}
+        <div id="showText">{inputValue}</div>
+      </div>
+    );
+  };
+
+  // Render the React component
+  ReactDOM.render(<App />, document.getElementById('root'));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+
+    <div id="mydiv"></div>
+    <input type="text" id="textToShow">
+    <input type="button" id="showText" value="Submit">
+
+    <div id="textDiv"></div>
+
+    <script type="text/babel">
+      function Hello() {
+        return <h1>Hello World!</h1>;
+      }
+     
+      function Greetings(){
+       
+       
+        return <h2>text</h2>;
+      }
+
+      const container = document.getElementById('mydiv');
+      
+      const textContainer = document.getElementById('textDiv')
+      
+      const root = ReactDOM.createRoot(container);
+      
+      const root1 = ReactDOM.createRoot(textContainer);
+
+      root.render(<Hello />)
+      root1.render(<Greetings />)
+    </script>
+
+  </body>
+</html>
