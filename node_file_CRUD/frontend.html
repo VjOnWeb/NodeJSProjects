@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image CRUD</title>
+  <title>Image CRUD Node Controlled</title>
+  <link rel="icon" href="crud.svg" type="image/png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
@@ -60,6 +61,16 @@
       background-color: #d4edda;
       border-color: #c3e6cb;
       color: #155724;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .confirmation-card.error {
+      background-color: #edd4d9;
+      border-color: #e6c3c3;
+      color: #571515;
       padding: 10px;
       margin-top: 10px;
       border-radius: 5px;
@@ -167,6 +178,7 @@
         confirmationCard.slideUp();
       }, 3000);
       // Call deleteImage after confirmation card is shown
+      confirmationCard.addClass("danger")
       deleteImage(image);
     }
 
